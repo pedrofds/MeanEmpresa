@@ -1,0 +1,35 @@
+<div class="container">
+  <!-- No data message -->
+  <p *ngIf="Funcionario.length <= 0" class="no-data text-center">There is no funcionario added yet!</p>
+
+  <!-- Funcionario list -->
+  <table class="table table-bordered" *ngIf="Funcionario.length > 0">
+    <thead class="table-success">
+      <tr>
+        <th scope="col">Funcionario ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Phone No</th>
+        <th scope="col center">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let funcionario of Funcionario; let i = index">
+        <th scope="row">{{funcionario._id}}</th>
+        <td>{{funcionario.name}}</td>
+        <td>{{funcionario.email}}</td>
+        <td>{{funcionario.designation}}</td>
+        <td>{{funcionario.phoneNumber}}</td>
+        <td class="text-center edit-block">
+          <span class="edit" [routerLink]="['/edit-funcionario/', funcionario._id]">
+            <button type="button" class="btn btn-success btn-sm">Edit</button>
+          </span>
+          <span class="delete" (click)="removeFuncionario(funcionario, i)">
+            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
