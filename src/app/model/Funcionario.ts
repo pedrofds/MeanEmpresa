@@ -1,6 +1,7 @@
 export class Funcionario {
-   name: string;
-   email: string;
-   designation: string;
-   phoneNumber: number;
+  name: string;
+  email: string;
+  cargo: string;
+  numeroTelefone: number;
+  senha: string;
 }

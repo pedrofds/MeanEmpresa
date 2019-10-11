@@ -1,4 +1,4 @@
-let express = require('express'),
+const express = require('express')
    path = require('path'),
    mongoose = require('mongoose'),
    cors = require('cors'),
@@ -6,19 +6,18 @@ let express = require('express'),
    dbConfig = require('./database/db');
 
 // Connecting with mongo db
-mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db, {
    useNewUrlParser: true
 }).then(() => {
-      console.log('Database sucessfully connected')
+      console.log('Conexão realizado!')
    },
    error => {
-      console.log('Database could not connected: ' + error)
+      console.log('Conexão não realizada : ' + error);
    }
-)
+);
 
 // Setting up port with express js
-const funcionarioRoute = require('../backend/routes/funcionario.route')
+const funcionarioRoute = require('../backend/routes/funcionario.route');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -27,7 +26,8 @@ app.use(bodyParser.urlencoded({
 app.use(cors()); 
 app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
-app.use('/api', funcionarioRoute)
+
+app.use('/api/fatecweb11/', funcionarioRoute);
 
 // Create port
 const port = process.env.PORT || 4000;

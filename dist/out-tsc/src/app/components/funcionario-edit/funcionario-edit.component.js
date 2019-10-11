@@ -19,13 +19,13 @@ var FuncionarioEditComponent = /** @class */ (function () {
         this.editForm = this.fb.group({
             name: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-            designation: ['', [Validators.required]],
-            phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+            cargo: ['', [Validators.required]],
+            numeroTelefone: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
         });
     };
     // Choose options with select-dropdown
     FuncionarioEditComponent.prototype.updateProfile = function (e) {
-        this.editForm.get('designation').setValue(e, {
+        this.editForm.get('cargo').setValue(e, {
             onlySelf: true
         });
     };
@@ -43,8 +43,8 @@ var FuncionarioEditComponent = /** @class */ (function () {
             _this.editForm.setValue({
                 name: data['name'],
                 email: data['email'],
-                designation: data['designation'],
-                phoneNumber: data['phoneNumber'],
+                cargo: data['cargo'],
+                numeroTelefone: data['numeroTelefone'],
             });
         });
     };
@@ -52,8 +52,8 @@ var FuncionarioEditComponent = /** @class */ (function () {
         this.editForm = this.fb.group({
             name: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-            designation: ['', [Validators.required]],
-            phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+            cargo: ['', [Validators.required]],
+            numeroTelefone: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
         });
     };
     FuncionarioEditComponent.prototype.onSubmit = function () {

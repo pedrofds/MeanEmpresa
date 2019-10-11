@@ -27,27 +27,36 @@
         <div class="form-group">
           <label for="inputPassword3">Cargo</label>
           <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
-            formControlName="designation">
+            formControlName="cargo">
             <option value="">selecione...</option>
             <option *ngFor="let funcionarioProfile of FuncionarioProfile" value="{{funcionarioProfile}}">{{funcionarioProfile}}
             </option>
           </select>
           <!-- error -->
-          <div class="invalid-feedback" *ngIf="submitted && myForm.designation.errors?.required">
+          <div class="invalid-feedback" *ngIf="submitted && myForm.cargo.errors?.required">
             Selecione o cargo.
           </div>
         </div>
 
         <div class="form-group">
           <label for="inputVerify3">Nº Celular</label>
-          <input class="form-control" type="text" formControlName="phoneNumber" value="17996018442" >
+          <input class="form-control" type="text" formControlName="numeroTelefone" value="17996018442" >
           <!-- error -->
-          <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors?.required">
+          <div class="invalid-feedback" *ngIf="submitted && myForm.numeroTelefone.errors?.required">
             Entre com o seu celular.
           </div>
-          <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors?.pattern">
+          <div class="invalid-feedback" *ngIf="submitted && myForm.numeroTelefone.errors?.pattern">
             Somente números
           </div>
+        </div>
+        <div class="form-group">
+          <label for="inputVerify3">Senha</label>
+          <input class="form-control" type="password" formControlName="senha" value="" >
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.senha.errors?.required">
+            Entre com o seu celular.
+          </div>
+         
         </div>
 
         <div class="form-group">

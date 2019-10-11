@@ -28,27 +28,27 @@
            </div>
 
            <div class="form-group">
-             <label for="inputPassword3">Designation</label>
+             <label for="inputPassword3">cargo</label>
              <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
-               formControlName="designation">
+               formControlName="cargo">
                <option value="">Choose...</option>
                <option *ngFor="let funcionarioProfile of FuncionarioProfile" value="{{funcionarioProfile}}">{{funcionarioProfile}}
                </option>
              </select>
              <!-- error -->
-             <div class="invalid-feedback" *ngIf="submitted && myForm.designation.errors?.required">
-               Choose designation.
+             <div class="invalid-feedback" *ngIf="submitted && myForm.cargo.errors?.required">
+               Choose cargo.
              </div>
            </div>
 
            <div class="form-group">
              <label for="inputVerify3">Mobile No</label>
-             <input class="form-control" type="text" formControlName="phoneNumber">
+             <input class="form-control" type="text" formControlName="numeroTelefone">
              <!-- error -->
-             <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors?.required">
+             <div class="invalid-feedback" *ngIf="submitted && myForm.numeroTelefone.errors?.required">
                Enter your phone number.
              </div>
-             <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors?.pattern">
+             <div class="invalid-feedback" *ngIf="submitted && myForm.numeroTelefone.errors?.pattern">
                Enter Numbers Only
              </div>
            </div>

@@ -11,9 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongoose": "^5.5.2"
+    "mongoose": "^5.7.4"
   },
   "devDependencies": {
     "nodemon": "^1.19.3"

@@ -70,4 +70,15 @@ funcionarioRoute.route('/delete/:id').delete((req, res, next) => {
   })
 })
 
+funcionarioRoute.route("/login").post((req, res, next) => {
+  
+  Funcionario.create(req.body, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+});
+
 module.exports = funcionarioRoute;

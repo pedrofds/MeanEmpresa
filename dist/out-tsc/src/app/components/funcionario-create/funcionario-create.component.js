@@ -18,13 +18,13 @@ var FuncionarioCreateComponent = /** @class */ (function () {
         this.funcionarioForm = this.fb.group({
             name: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-            designation: ['', [Validators.required]],
-            phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+            cargo: ['', [Validators.required]],
+            numeroTelefone: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
         });
     };
-    // Choose designation with select dropdown
+    // Choose cargo with select dropdown
     FuncionarioCreateComponent.prototype.updateProfile = function (e) {
-        this.funcionarioForm.get('designation').setValue(e, {
+        this.funcionarioForm.get('cargo').setValue(e, {
             onlySelf: true
         });
     };
